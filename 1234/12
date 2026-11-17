@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synergy Studio | Digital Agency</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Using a professional font from Google Fonts (Optional but recommended) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. NAVIGATION BAR -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">Synergy Studio</div>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Work</a></li>
+                    <li><a href="#contact" class="cta-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION (The Main Intro) -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-content">
+            <h1>Building Digital Experiences That Scale</h1>
+            <p class="subtitle">We craft stunning, high-performance websites and applications tailored to your brand's unique vision.</p>
+            <a href="#portfolio" class="btn btn-primary">View Our Work</a>
+        </div>
+    </section>
+
+    <!-- 3. SERVICES SECTION -->
+    <section id="services" class="service-section section-padding">
+        <div class="container">
+            <h2>What We Do</h2>
+            <p class="subtitle text-center">From concept to launch, we handle every pixel and line of code.</p>
+
+            <div class="service-grid">
+                <!-- Service Item 1 -->
+                <div class="service-card hover-effect">
+                    <div class="icon">✨</div>
+                    <h3>Web Development</h3>
+                    <p>Building lightning-fast, responsive websites using the latest frameworks.</p>
+                </div>
+                <!-- Service Item 2 -->
+                <div class="service-card hover-effect">
+                    <div class="icon">🎨</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating intuitive and beautiful user experiences that convert visitors into customers.</p>
+                </div>
+                <!-- Service Item 3 -->
+                <div class="service-card hover-effect">
+                    <div class="icon">💡</div>
+                    <h3>Branding & Strategy</h3>
+                    <p>Defining your brand's voice and visual identity for market dominance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PORTFOLIO SECTION (CSS Grid Showcase) -->
+    <section id="portfolio" class="portfolio-section section-padding">
+        <div class="container">
+            <h2>Our Featured Work</h2>
+            <p class="subtitle text-center">A showcase of diverse projects that pushed the boundaries of design.</p>
+
+            <div class="grid-gallery">
+                <!-- Project Card 1 -->
+                <div class="project-card hover-effect">
+                    <div class="overlay">Ecommerce Platform</div>
+                    <div class="details">Minimalist UI Design</div>
+                </div>
+                 <!-- Project Card 2 -->
+                <div class="project-card hover-effect">
+                    <div class="overlay">SaaS Dashboard</div>
+                    <div class="details">React & API Integration</div>
+                </div>
+                 <!-- Project Card 3 -->
+                <div class="project-card hover-effect">
+                    <div class="overlay">Creative Portfolio</div>
+                    <div class="details">Advanced Animations</div>
+                </div>
+            </div>
+
+             <a href="#" class="btn btn-secondary view-all">View All Projects →</a>
+        </div>
+    </section>
+
+    <!-- 5. CONTACT SECTION -->
+    <section id="contact" class="contact-section section-padding">
+         <div class="container contact-content text-center">
+            <h2>Ready to Build Something Amazing?</h2>
+            <p class="subtitle">Let's discuss your vision and turn it into a reality.</p>
+            <a href="" class="btn btn-primary btn-large">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer>
+        <div class="container text-center footer-content">
+            <p>&copy; 2024 Synergy Studio. Crafted with HTML & CSS.</p>
+            <div class="social-icons">
+                <a href="#">[🐦]</a>
+                <a href="#">[📸]</a>
+                <a href="#">[🔗]</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

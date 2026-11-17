@@ -1,0 +1,365 @@
+/* ====================================== */
+/* GLOBAL RESET & VARIABLES (THE FOUNDATION)  */
+/* ====================================== */
+:root {
+    --dark-bg: #1a1f2d;          /* Primary background color */
+    --card-bg: #232b3e;          /* Slightly lighter card/section background */
+    --text-color: #e8ecf1;       /* Light text color (white-ish) */
+    --accent-color: #4a90e2;     /* The primary blue accent */
+    --hover-bg: #35415d;         /* Background for hover effects */
+    --padding-section: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Critical for layout predictability */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Smooth scrolling when clicking nav links */
+}
+
+a {
+    text-decoration: none;
+    color: #e8ecf1;
+    transition: color 0.3s ease;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: var(--padding-section) 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ====================================== */
+/* TYPOGRAPHY & HEADINGS (THE FEELING)     */
+/* ====================================== */
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #ffffff; /* Making the main heading pop */
+}
+
+p.subtitle {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    opacity: 0.8;
+}
+
+
+/* ====================================== */
+/* BUTTONS (REUSABLE COMPONENTS)           */
+/* ====================================== */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: #3a88cc; /* Slightly darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 10px 25px;
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+
+/* ====================================== */
+/* 1. NAVIGATION BAR STYLING               */
+/* Uses Flexbox for perfect alignment      */
+/* ====================================== */
+
+.navbar {
+    background-color: rgba(26, 31, 45, 0.98); /* Slight transparency effect */
+    padding: 15px 0;
+    position: sticky; /* Makes the nav stick to the top when scrolling (fancy feature) */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--accent-color); /* Logo highlights the brand */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+nav a {
+    font-size: 1rem;
+    padding: 5px 0;
+    position: relative; /* Needed for the fancy underline effect */
+}
+
+/* Fancy Hover Effect on Links using ::after pseudo-element */
+nav a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease-in-out;
+    position: absolute;
+    bottom: -5px;
+    left: 0%;
+}
+
+nav a:hover::after {
+    width: 100%; /* The underline expands fully on hover */
+}
+
+
+/* ====================================== */
+/* 2. HERO SECTION STYLING                */
+/* ====================================== */
+#hero {
+    height: 85vh; /* Takes up most of the viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+
+/* ====================================== */
+/* 3. SERVICES SECTION STYLING            */
+/* Uses CSS Grid for structured layout      */
+/* ====================================== */
+#services {
+    background-color: var(--card-bg); /* Gives the section separation */
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-card {
+    background: var(--dark-bg);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fancy Hover Effect on Cards */
+.hover-effect {
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-8px); /* Lifts the card up */
+    box-shadow: 0 15px 40px rgba(74, 144, 226, 0.2); /* Glow effect */
+}
+
+.service-card .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+
+/* ====================================== */
+/* 4. PORTFOLIO SECTION STYLING           */
+/* Uses CSS Grid for image placeholders    */
+/* ====================================== */
+#portfolio {
+    background-color: var(--dark-bg);
+}
+
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.project-card {
+    position: relative; /* Essential for overlay positioning */
+    overflow: hidden;
+    height: 300px;
+    border-radius: 10px;
+    background: #2d354b; /* Placeholder dark background */
+    cursor: pointer;
+}
+
+/* Fancy Overlay Effect */
+.project-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(74, 144, 226, 0.85); /* Semi-transparent blue */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(1.05);
+}
+
+.project-card .details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent); /* Gradient fade effect */
+    color: white;
+    transform: translateY(100%); /* Start hidden below the card */
+    transition: all 0.3s ease;
+}
+
+/* Hover Logic for Portfolio Cards */
+.project-card:hover .overlay {
+    opacity: 1; /* Make overlay visible */
+    transform: scale(1);
+}
+
+.project-card:hover .details {
+    transform: translateY(0); /* Slide details up on hover */
+    background: linear-gradient(to top, var(--dark-bg) 0%, transparent);
+}
+
+
+/* ====================================== */
+/* CONTACT SECTION & FOOTER STYLING       */
+/* ====================================== */
+
+#contact {
+    background-color: var(--card-bg);
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    margin-top: 30px;
+}
+
+
+/* FOOTER STYLING */
+footer {
+    background-color: #131621; /* Even darker footer */
+    padding: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.social-icons a {
+    margin-left: 20px;
+    font-size: 1.2rem;
+}
+
+/* ====================================== */
+/* MEDIA QUERIES (RESPONSIVENESS)        */
+/* ====================================== */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    p.subtitle {
+        margin-bottom: 30px;
+    }
+    
+    /* Stack the navigation items vertically on smaller screens */
+    nav ul {
+        gap: 15px;
+        flex-direction: column;
+        text-align: center;
+        width: 100%; /* Make links take full width */
+    }
+
+    .nav-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+     /* Adjust grid for smaller screens */
+    .grid-gallery, .service-grid {
+        grid-template-columns: 1fr; /* One column layout */
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+     /* Reduce padding for mobile readability */
+    .section-padding {
+        padding: 60px 0;
+    }
+}
